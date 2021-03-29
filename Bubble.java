@@ -1,19 +1,19 @@
 public class Bubble {
     public static void sort(int[] input) {
         // flag for premature termination
-        boolean unsorted = true;
+        int sorted = input.length;
 
         // loop over array n times
-        for (int i = 0; unsorted && i < input.length - 1; i++) {
-            // reset flag
-            unsorted = false;
+        for (int i = 0; sorted != 1 && i < input.length - 1; i++) {
+            // copy to avoid overriding
+            int cache = sorted;
 
-            // last i numbers will already be sorted
-            for (int j = 0; j < input.length - 1 - i; j++) {
+            // last numbers will already be sorted
+            for (int j = 0; j < cache - 1; j++) {
                 // unsorted pair
                 if (input[j] > input[j + 1]) {
                     swap(input, j, j + 1);
-                    unsorted = true;
+                    sorted = j + 1;
                 }
             }
         }
