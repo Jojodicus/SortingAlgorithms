@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         Class<?>[] classes;
         if (args.length == 0) { // all algorithms get tested
-            classes = new Class[]{Bubble.class, Heap.class, Insertion.class, Quick.class, RadixBit.class, Selection.class};
+            classes = new Class[]{Bubble.class, Heap.class, Insertion.class, Merge.class, Quick.class, RadixBit.class, Selection.class};
         } else {
             classes = new Class[args.length];
 
@@ -42,7 +42,7 @@ public class Main {
                 test(aClass);
                 System.out.println(aClass.getName() + " works correctly (" + tries + " tries)");
             } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-                System.err.println(e.toString() + e.getMessage());
+                System.err.println(e.toString());
             }
         }
     }
