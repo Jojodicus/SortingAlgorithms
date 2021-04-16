@@ -42,7 +42,7 @@ public class Main {
                 test(aClass);
                 System.out.println(aClass.getName() + " works correctly (" + tries + " tries)");
             } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
-                System.err.println(e.toString());
+                System.err.println(e);
             }
         }
     }
@@ -77,15 +77,9 @@ public class Main {
      * @param input array that should be shuffled
      */
     private static void shuffle(int[] input) {
-        // go over array twice
-        for (int i = 0; i < input.length * 2; i++) {
-            int a = (int) (Math.random() * input.length);
-            int b = (int) (Math.random() * input.length);
-
-            if (Math.max(a, b) == input.length) // extremely unlikely - but possible
-                continue;
-
-            swap(input, a, b);
+        // Fisher-Yates shuffle
+        for (int i = input.length - 1; i > 0; i--) {
+            swap(input, i, (int) (Math.random() * (i + 1)));
         }
     }
 
