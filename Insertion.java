@@ -1,5 +1,5 @@
 public class Insertion {
-    public static void sort(int[] input) {
+    public static void sort(final int[] input) {
         // loop through each element
         for (int i = 1; i < input.length; i++) {
             // swap it to the front until in right place
@@ -10,8 +10,8 @@ public class Insertion {
     }
 
     // swaps index a and b
-    private static void swap(int[] input, int a, int b) {
-        int cache = input[a];
+    private static void swap(final int[] input, final int a, final int b) {
+        final int cache = input[a];
         input[a] = input[b];
         input[b] = cache;
     }

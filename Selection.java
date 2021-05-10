@@ -1,5 +1,5 @@
 public class Selection {
-    public static void sort(int[] input) {
+    public static void sort(final int[] input) {
         // iterate over input
         for (int i = 0; i < input.length; i++) {
             // cache min index
@@ -18,11 +18,11 @@ public class Selection {
     }
 
     // swaps index a and b
-    private static void swap(int[] input, int a, int b) {
+    private static void swap(final int[] input, final int a, final int b) {
         if (a == b)
             return;
 
-        int cache = input[a];
+        final int cache = input[a];
         input[a] = input[b];
         input[b] = cache;
     }

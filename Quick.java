@@ -1,15 +1,15 @@
 public class Quick {
-    public static void sort(int[] input) {
+    public static void sort(final int[] input) {
         quicksort(input, 0, input.length - 1);
     }
 
-    private static void quicksort(int[] input, int start, int end) {
+    private static void quicksort(final int[] input, final int start, final int end) {
         // recursion base case
         if (end <= start)
             return;
 
         // partition and get pivot position
-        int pivot = partition(input, start, end);
+        final int pivot = partition(input, start, end);
 
         // repeat for the two sub-partitions
         quicksort(input, start, pivot - 1);
@@ -17,9 +17,9 @@ public class Quick {
 
     }
 
-    private static int partition(int[] input, int start, int end) {
+    private static int partition(final int[] input, final int start, final int end) {
         // pivot is last element
-        int pivot = input[end];
+        final int pivot = input[end];
 
         // pivot position
         int i = start;
@@ -41,8 +41,8 @@ public class Quick {
     }
 
     // swaps index a and b
-    private static void swap(int[] input, int a, int b) {
-        int cache = input[a];
+    private static void swap(final int[] input, final int a, final int b) {
+        final int cache = input[a];
         input[a] = input[b];
         input[b] = cache;
     }
