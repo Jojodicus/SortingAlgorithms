@@ -16,8 +16,8 @@ public class Main {
     /**
      * @param args name of classes that should be tested (or all if empty)
      */
-    public static void main(String[] args) {
-        Class<?>[] classes;
+    public static void main(final String[] args) {
+        final Class<?>[] classes;
         if (args.length == 0) { // all algorithms get tested
             classes = new Class[]{Bubble.class, Heap.class, Insertion.class, Merge.class, Quick.class, RadixBit.class, Selection.class};
         } else {
@@ -27,21 +27,21 @@ public class Main {
             for (int i = 0; i < args.length; i++) {
                 try {
                     classes[i] = Class.forName(args[i]);
-                } catch (ClassNotFoundException e) {
+                } catch (final ClassNotFoundException e) {
                     System.err.println(args[i] + " is not a valid class name");
                 }
             }
         }
 
         // test classes
-        for (Class<?> aClass : classes) {
+        for (final Class<?> aClass : classes) {
             if (aClass == null) // arg had invalid name
                 continue;
 
             try {
                 test(aClass);
                 System.out.println(aClass.getName() + " works correctly (" + tries + " tries)");
-            } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
+            } catch (final NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
                 System.err.println(e);
             }
         }
@@ -54,12 +54,12 @@ public class Main {
      * @throws IllegalAccessException if sort is inaccessible
      */
     @SuppressWarnings("PrimitiveArrayArgumentToVariableArgMethod") // IntelliJ cant get rid of this warning
-    private static void test(Class<?> aClass) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    private static void test(final Class<?> aClass) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         // get sorting algorithm
-        Method sort = aClass.getDeclaredMethod("sort", int[].class);
+        final Method sort = aClass.getDeclaredMethod("sort", int[].class);
 
         // prepare array backwards
-        int[] arr = new int[length];
+        final int[] arr = new int[length];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = arr.length - i - 1;
         }
@@ -76,7 +76,7 @@ public class Main {
     /**
      * @param input array that should be shuffled
      */
-    private static void shuffle(int[] input) {
+    private static void shuffle(final int[] input) {
         // Fisher-Yates shuffle
         for (int i = input.length - 1; i > 0; i--) {
             swap(input, i, (int) (Math.random() * (i + 1)));
@@ -88,8 +88,8 @@ public class Main {
      * @param a first swap index
      * @param b second swap index
      */
-    private static void swap(int[] input, int a, int b) {
-        int cache = input[a];
+    private static void swap(final int[] input, final int a, final int b) {
+        final int cache = input[a];
         input[a] = input[b];
         input[b] = cache;
     }
@@ -98,7 +98,7 @@ public class Main {
      * @param input array that gets tested
      * @return if array is sorted
      */
-    private static boolean sorted(int[] input) {
+    private static boolean sorted(final int[] input) {
         for (int i = 1; i < input.length; i++) {
             if (input[i - 1] > input[i])
                 return false;
