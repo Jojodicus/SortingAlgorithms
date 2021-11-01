@@ -1,16 +1,16 @@
 public class Merge {
-    public static void sort(final int[] input) {
+    public static void sort(int[] input) {
         // initialize
         mergesort(input, 0, input.length - 1);
     }
 
-    private static void mergesort(final int[] list, final int start, final int end) {
+    private static void mergesort(int[] list, int start, int end) {
         // trivial base case
         if(start >= end)
             return;
 
         // find mid index while avoiding overflows
-        final int mid = start + ((end - start) / 2);
+        int mid = start + ((end - start) / 2);
 
         // sort two halves
         mergesort(list, start, mid);
@@ -21,10 +21,10 @@ public class Merge {
     }
 
     @SuppressWarnings("ManualArrayCopy")
-    private static void merge(final int[] list, int start, int mid, int end) {
+    private static void merge(int[] list, int start, int mid, int end) {
         // initialize arrays
-        final int[] left = new int[mid - start + 1];
-        final int[] right = new int[end - mid];
+        int[] left = new int[mid - start + 1];
+        int[] right = new int[end - mid];
 
         for (int i = 0; i < left.length; i++) {
             left[i] = list[i + start];

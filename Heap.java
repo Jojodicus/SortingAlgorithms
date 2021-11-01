@@ -1,5 +1,5 @@
 public class Heap {
-    public static void sort(final int[] input) {
+    public static void sort(int[] input) {
         // build heap from back
         for (int i = input.length / 2; i >= 0; i--) {
             reheap(input, i, input.length);
@@ -13,12 +13,12 @@ public class Heap {
     }
 
     // reheap as max-heap
-    private static void reheap(final int[] heap, final int start, final int end) {
+    private static void reheap(int[] heap, int start, int end) {
         int biggest = start;
 
         // left and right child indices
-        final int left = 2 * start + 1;
-        final int right = 2 * start + 2;
+        int left = 2 * start + 1;
+        int right = 2 * start + 2;
 
         // check if left is bigger
         if (left < end && heap[left] > heap[biggest])
@@ -39,8 +39,8 @@ public class Heap {
     }
 
     // swaps index a and b
-    private static void swap(final int[] input, final int a, final int b) {
-        final int cache = input[a];
+    private static void swap(int[] input, int a, int b) {
+        int cache = input[a];
         input[a] = input[b];
         input[b] = cache;
     }
