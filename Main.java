@@ -68,7 +68,7 @@ public class Main {
         for (int i = 0; i < tries; i++) {
             sort.invoke(new Object(), arr);
             if (!sorted(arr))
-                throw new AssertionError(aClass.getName() + " did not sorted properly: " + Arrays.toString(arr));
+                throw new AssertionError(aClass.getName() + " did not sort properly: " + Arrays.toString(arr));
             shuffle(arr); // last shuffle will be unnecessary
         }
     }
