@@ -13,7 +13,7 @@ A (hopefully sorted) list of sorting algorithms to sort your list of sorting alg
 ## usage of Main class
 The Main class is used for testing the algorithms. It can either test all algorithms, or specific ones.
 
-As is, it will test any algorithm **20** times with **20** randomly shuffled numbers.\
+As is, it will test any algorithm **20** times with **10** randomly shuffled numbers.\
 These values can be changed in the source if needed.
 
 After compiling,
