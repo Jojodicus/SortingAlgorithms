@@ -6,7 +6,7 @@ public class Main {
     /**
      * length of arrays that get testet {0, 1, ... , length - 1}
      */
-    private static final int length = 20;
+    private static final int length = 10;
 
     /**
      * how many times each sorter gets tested with a shuffled array
@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         Class<?>[] classes;
         if (args.length == 0) { // all algorithms get tested
-            classes = new Class[]{Bubble.class, Heap.class, Insertion.class, Merge.class, Quick.class, RadixBit.class, Selection.class};
+            classes = new Class[]{Bogo.class, Bubble.class, Heap.class, Insertion.class, Merge.class, Quick.class, RadixBit.class, Selection.class};
         } else {
             classes = new Class[args.length];
 
