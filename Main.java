@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         Class<?>[] classes;
         if (args.length == 0) { // all algorithms get tested
-            classes = new Class[]{Bubble.class, Heap.class, Insertion.class, Merge.class, Quick.class, RadixBit.class, Selection.class};
+            classes = new Class[]{Bubble.class, Heap.class, Insertion.class, Merge.class, Quick.class, RadixBit.class, Selection.class, Stalin.class};
         } else {
             classes = new Class[args.length];
 
