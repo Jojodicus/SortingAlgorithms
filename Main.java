@@ -39,8 +39,14 @@ public class Main {
                 continue;
 
             try {
+                // time sorting
+                long start = System.currentTimeMillis();
+
                 test(aClass);
-                System.out.println(aClass.getName() + " works correctly (" + tries + " tries)");
+
+                long end = System.currentTimeMillis();
+
+                System.out.println(String.format("%s works correctly (%d tries - took %d ms)", aClass.getName(), tries, end - start));
             } catch (NoSuchMethodException | InvocationTargetException | IllegalAccessException e) {
                 System.err.println(e);
             }
