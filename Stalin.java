@@ -3,7 +3,7 @@ public class Stalin {
 
     public static void sort(int[] input) {
         // eliminate political enemies
-        for (int i = 1; i < input.length; ++i) {
+        for (int i = input.length - 1; i > 0; --i) {
             if (input[i - 1] > input[i])
                 input[i] = Integer.MAX_VALUE;
         }
